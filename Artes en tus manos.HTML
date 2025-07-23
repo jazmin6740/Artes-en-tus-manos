@@ -1,0 +1,200 @@
+<!DOCTYPE html>  
+<html lang="es"> <!-- idioma  -->
+<head>
+    <meta charset="UTF-8"> <!-- tildes  -->
+    <title> tienda de compus  </title>  <!--  titulo o nombre de la pagina -->
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        header {
+            background-image: url('https://scontent.fgua1-3.fna.fbcdn.net/v/t39.30808-6/490363871_9428365007253081_1814445328814117179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=wGXwl7FEY5AQ7kNvwG0dzM3&_nc_oc=AdnZFUJwvwBphojbSi6Fgp1FaWDlMjcCB6A6BIoHpwBbqvlYg2HHucdB424P29l3IAa1nBIXAF18zr5WHrC2sz_h&_nc_zt=23&_nc_ht=scontent.fgua1-3.fna&_nc_gid=QADEx9UY2rvji5ffIEOgzw&oh=00_AfR244y2CY7odVdwEpbapOZXSguruPRbchWcm-Dco0xXZQ&oe=6886212D');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px;
+            text-align: center; 
+        }
+        header h1 {
+            background-color: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .producto {
+            background-color: white;
+            width: 300px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .producto:hover {
+            transform: scale(1.03);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        h2 {
+            font-size: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 14px;
+            color: #555;
+        }
+        .boton-compra {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .boton-compra:hover {
+            background-color: #219150;
+        }
+        .contacto {
+            text-align: center;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+        .contacto a {
+            text-decoration: none;
+            margin: 0 15px;
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .contacto a:hover {
+            color: #2980b9;
+        }
+
+        /* Estilos para ventana emergente */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .popup-contenido {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            animation: entrada 0.5s ease;
+        }
+        .popup-contenido img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+        .popup-contenido h2 {
+            margin: 0 0 10px 0;
+        }
+        .cerrar {
+            margin-top: 15px;
+            padding: 8px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @keyframes entrada {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Artesania: Arte en tus Manos</h1>
+</header>
+
+<section class="contenedor">
+
+    <div class="producto">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEnZ1g9D9OOG7u9EgrLQyECaoTbuJu98-y0w&s" alt="FALDA">
+        <h2>Corte</h2>
+        <p><strong>Q1,000.00</strong></p>
+        <p>Corte: Color Blanco</p>
+        <button class="boton-compra" onclick="mostrarPopup('HP ProBook 450')">Comprar</button>
+    </div>
+
+    <div class="producto">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2pPZB-iCXSSbv3JUY65EURZ1xdYdTx-A9dg&s" alt="Guipil">
+        <h2>Guipil</h2>
+        <p><strong>Q10,000.00</strong></p>
+        <p>Guipil: Color verde</p>
+        <button class="boton-compra" onclick="mostrarPopup('Dell Inspiron 14')">Comprar</button>
+    </div>
+
+    <div class="producto">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGjW9_icjVzsjqizs1fs4sHDRSi9cCZjLnfA&s" alt="Sirvieta">
+        <h2>Sirvieta</h2>
+        <p><strong>Q9,000</strong></p>
+        <p>Sirvieta: Color Rojo</p>
+        <button class="boton-compra" onclick="mostrarPopup('Lenovo IdeaPad 3')">Comprar</button>
+    </div>
+	
+	 <div class="producto">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBixcrJ3S9rt4d7JUNh-TmFzWGyjX2duEgZQ&s" alt="Conjunto">
+        <h2>Indumentaria</h2>
+        <p><strong>Q40,000</strong></p>
+        <p>Guipil, Faja, Corte, Servieta,</p>
+        <button class="boton-compra" onclick="mostrarPopup('Lenovo IdeaPad 3')">Comprar</button>
+    </div>
+
+</section>
+
+<div class="contacto">
+    <h3>Contáctanos</h3>
+    <a href="https://wa.me/50248856888" target="_blank">📱 WhatsApp</a>
+    <a href="mailto:ventas@domotronic.com">📧 Correo</a>
+    <a href="tel:+50249962273">📞 Llamada</a>
+</div>
+
+
+<div class="popup" id="popup">
+    <div class="popup-contenido">
+        <img src="https://i.imgur.com/U9dFIdh.png" alt="Éxito">
+        <h2>¡Compra realizada!</h2>
+        <p id="mensajeProducto"></p>
+        <button class="cerrar" onclick="cerrarPopup()">Aceptar</button>
+    </div>
+</div>
+
+<script>
+    function mostrarPopup(producto) {
+        document.getElementById("mensajeProducto").innerText = "Has comprado: " + producto + ". Te contactaremos pronto.";
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function cerrarPopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
